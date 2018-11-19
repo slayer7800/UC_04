@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// This class is specific to Player Controlled tanks
 
 #include "TankPlayerController.h"
 #include "Engine/World.h"  //for GetWorld()
@@ -29,6 +29,13 @@ void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	AimTowardsCrosshair();
+	//We want to know if this hits a part of the world
+	//Step 1 Find out where it hits (GetSightRayHitLocation)
+	//Step 2 Find the crosshair position X and Y pixel values (GetViewPortSize has 2 out parameters for the screen size, we know where the crosshair is relative to the screen)
+	//Step 3 Determine the direction we are looking DeProjectScreenPositionToWorld will do this inside GetLookDirection
+	//	LookDirection is a unit vector pointing through our crosshair since it takes X,Y pixel values
+	//Step 4 Determine where/what it hits GetWorld()->LineTraceSingleByChannel in GetLookVectorHitLocation
+
 }
 
 
