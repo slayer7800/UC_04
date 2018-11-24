@@ -8,6 +8,8 @@
 #include "TankAimingComponent.h"
 #include "Tank.generated.h"
 
+class UTankBarrel;  //Forward declaration allows to reference this class type here
+
 UCLASS()
 class BT_API ATank : public APawn
 {
@@ -29,7 +31,7 @@ public:
 	ATank();
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelReference(UStaticMeshComponent * BarrelToSet);  //We are setting the barrel at start for all tanks in blueprint
+	void SetBarrelReference(UTankBarrel * BarrelToSet);  //We are setting the barrel at start for all tanks in blueprint
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -38,5 +40,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void AimAt(FVector HitLocation);
+private:
+
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 100000;  //1000 m/s
+
 	
 };

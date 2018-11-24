@@ -16,7 +16,7 @@ ATank::ATank() //Constructor
 
 }
 
-void ATank::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
+void ATank::SetBarrelReference(UTankBarrel * BarrelToSet)
 {
 	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
@@ -45,6 +45,6 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 void ATank::AimAt(FVector HitLocation)
 {
 
-	TankAimingComponent->AimAt(HitLocation); //Doing a double AimAt currently from the controllers using this one this goes to the Aiming Component
+	TankAimingComponent->AimAt(HitLocation, LaunchSpeed); //Doing a double AimAt currently from the controllers using this one this goes to the Aiming Component
 }
 
