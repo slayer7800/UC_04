@@ -1,5 +1,6 @@
 // This class is specific to AI controlled tanks
 
+#include "Tank.h"
 #include "TankAIController.h"
 #include "Engine/World.h"
 

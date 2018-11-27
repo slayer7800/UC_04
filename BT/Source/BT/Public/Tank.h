@@ -5,10 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 
-#include "TankAimingComponent.h"
+
 #include "Tank.generated.h"
 
 class UTankBarrel;  //Forward declaration allows to reference this class type here
+class UTankAimingComponent;
 
 UCLASS()
 class BT_API ATank : public APawn
@@ -33,8 +34,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel * BarrelToSet);  //We are setting the barrel at start for all tanks in blueprint
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
