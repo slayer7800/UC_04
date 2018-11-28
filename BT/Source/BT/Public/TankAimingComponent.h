@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
 
+class UTankTurret;
 class UTankBarrel;  //Forward declaration allows to reference this class type here
 
 //Holds barrel's properties and Elevate method
@@ -20,6 +21,8 @@ public:
 
 	void SetBarrelReference(UTankBarrel * BarrelToSet); //setter method
 
+	void SetTurretReference(UTankTurret * TurretToSet); //setter method
+
 protected:
 
 
@@ -30,6 +33,7 @@ public:
 
 private:
 	UTankBarrel * Barrel = nullptr;
+	UTankTurret * Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
 	

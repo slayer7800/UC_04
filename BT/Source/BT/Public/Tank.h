@@ -8,6 +8,7 @@
 
 #include "Tank.generated.h"
 
+class UTankTurret;
 class UTankBarrel;  //Forward declaration allows to reference this class type here
 class UTankAimingComponent;
 
@@ -33,6 +34,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel * BarrelToSet);  //We are setting the barrel at start for all tanks in blueprint
+
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetTurretReference(UTankTurret * TurretToSet);  //We are setting the barrel at start for all tanks in blueprint
 
 
 	// Called to bind functionality to input

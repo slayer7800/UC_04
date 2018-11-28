@@ -1,7 +1,8 @@
 // This class is specific to Player Controlled tanks
 
-#include "Tank.h"
+
 #include "TankPlayerController.h"
+#include "Tank.h"
 #include "Engine/World.h"  //for GetWorld()
 
 
